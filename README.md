@@ -10,14 +10,27 @@ DevSphere does not use a separate admin panel. A developer can create their own 
 ## Features
 
 - Professional registration and login
+- <img width="1732" height="700" alt="Screenshot 2026-08-23 153238" src="https://github.com/user-attachments/assets/9da39914-4c29-4d4f-9d6b-c722e1e1832a" />
+<img width="1710" height="565" alt="Screenshot 2026-08-23 153250" src="https://github.com/user-attachments/assets/650e99a6-1b1c-490a-bc6d-ea9af56bed3c" />
+
+
 - Developer profile
+- <img width="1920" height="1020" alt="Screenshot 2026-08-23 153058" src="https://github.com/user-attachments/assets/d7e42952-120a-479b-804b-6301fe7fc4e3" />
+<img width="1785" height="716" alt="Screenshot 2026-08-23 153206" src="https://github.com/user-attachments/assets/23de340a-24e0-4b2c-9844-3f65ebadfdb9" />
+
 - Skills, GitHub and LinkedIn links
+- <img width="1806" height="896" alt="Screenshot_23-8-2026_153121_127 0 0 1" src="https://github.com/user-attachments/assets/2aeed562-12e2-4898-9af5-64069f7ccccb" />
+
 - Personal dashboard
 - Project creation
+- <img width="1811" height="896" alt="Screenshot_23-8-2026_153135_127 0 0 1" src="https://github.com/user-attachments/assets/fd3fe57a-4b15-4ca9-8e64-2edb549bec6d" />
+
 - Public/private projects
 - Project workspace
 - Team members
 - Task management
+- ![Uploading Screenshot_23-8-2026_153148_127.0.0.1.jpeg…]()
+
 - Task status tracking
 - Issue and bug tracking
 - Milestones
