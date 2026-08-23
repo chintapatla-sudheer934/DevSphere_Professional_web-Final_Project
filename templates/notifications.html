@@ -1,0 +1,9 @@
+
+{% extends "base.html" %}
+{% block title %}Notifications | DevSphere{% endblock %}
+{% block content %}
+<div class="page-header"><div><span class="eyebrow">ACTIVITY</span><h1>Notifications</h1><p>Your latest workspace updates.</p></div></div>
+<div class="panel">
+{% for n in notifications %}<div class="notification"><b>{{n.message}}</b><small>{{n.created_at}}</small></div>{% else %}<div class="empty">You're all caught up.</div>{% endfor %}
+</div>
+{% endblock %}

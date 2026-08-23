@@ -1,0 +1,16 @@
+
+{% extends "base.html" %}
+{% block title %}New Project | DevSphere{% endblock %}
+{% block content %}
+<div class="form-wrap"><form class="panel form-card" method="POST">
+<span class="eyebrow">NEW WORKSPACE</span><h1>Create Project</h1>
+<label>Project Name</label><input name="title" required placeholder="e.g. Campus AI Assistant">
+<label>Description</label><textarea name="description" required placeholder="What are you building?"></textarea>
+<label>Category</label><input name="category" required placeholder="Web Development">
+<label>Technologies</label><input name="technologies" placeholder="Python, Flask, JavaScript, SQLite">
+<label>GitHub URL</label><input name="github" placeholder="https://github.com/...">
+<label>Live Demo URL</label><input name="demo" placeholder="https://...">
+<label>Visibility</label><select name="visibility"><option>Public</option><option>Private</option></select>
+<button class="btn primary">Create Workspace</button>
+</form></div>
+{% endblock %}

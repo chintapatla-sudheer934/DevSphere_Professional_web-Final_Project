@@ -1,0 +1,36 @@
+
+{% extends "base.html" %}
+{% block title %}Dashboard | DevSphere{% endblock %}
+{% block content %}
+<div class="page-header">
+<div><span class="eyebrow">YOUR WORKSPACE</span><h1>Good to see you, {{user.name.split()[0]}}.</h1><p>Here's what's happening across your projects.</p></div>
+<a class="btn primary" href="{{url_for('create_project')}}">+ New Project</a>
+</div>
+<div class="stats-grid">
+<div><span>Projects</span><strong>{{stats.projects}}</strong></div>
+<div><span>Open Tasks</span><strong>{{stats.tasks}}</strong></div>
+<div><span>Open Issues</span><strong>{{stats.issues}}</strong></div>
+<div><span>Project Stars</span><strong>{{stats.stars}}</strong></div>
+</div>
+<section class="dashboard-grid">
+<div>
+<div class="section-heading"><h2>My Projects</h2><a href="{{url_for('projects')}}">View all →</a></div>
+<div class="project-grid">
+{% for p in projects %}
+<a class="project-card" href="{{url_for('project',project_id=p.id)}}">
+<div class="card-row"><span class="tag">{{p.category}}</span><span>★ {{p.stars}}</span></div>
+<h3>{{p.title}}</h3><p>{{p.description[:110]}}{% if p.description|length>110 %}…{% endif %}</p>
+<div class="technology">{{p.technologies}}</div>
+<div class="progress"><i style="width:{{p.progress}}%"></i></div><small>{{p.progress}}% complete</small>
+</a>
+{% else %}
+<div class="empty">No projects yet. Create your first project workspace.</div>
+{% endfor %}
+</div>
+</div>
+<aside class="panel">
+<span class="eyebrow">ACTIVITY</span><h2>Recent Updates</h2>
+<p class="muted">Your latest workspace activity will appear here.</p>
+</aside>
+</section>
+{% endblock %}

@@ -1,0 +1,38 @@
+
+{% extends "base.html" %}
+{% block title %}DevSphere | Build Together{% endblock %}
+{% block content %}
+<section class="hero">
+<div>
+<span class="eyebrow">THE MODERN DEVELOPER WORKSPACE</span>
+<h1>Build better.<br><em>Ship together.</em></h1>
+<p>DevSphere brings developer profiles, project workspaces, tasks, issues, discussions and showcases into one professional platform.</p>
+<div class="hero-buttons">
+<a class="btn primary" href="{{url_for('register')}}">Create Workspace</a>
+<a class="btn secondary" href="{{url_for('login')}}">Sign In</a>
+</div>
+</div>
+<div class="dashboard-preview">
+<div class="preview-top"><b>DevSphere / Project</b><span>● ● ●</span></div>
+<div class="preview-content">
+<aside>PROJECT<br><b>Nova AI</b><br><br>Overview<br>Tasks<br>Issues<br>Team<br>Files</aside>
+<section>
+<span class="muted">PROJECT OVERVIEW</span>
+<h2>Nova AI Assistant</h2>
+<div class="progress"><i style="width:78%"></i></div>
+<small>78% complete</small>
+<div class="mini-stats">
+<div>Tasks<strong>24</strong></div>
+<div>Issues<strong>7</strong></div>
+<div>Team<strong>5</strong></div>
+</div>
+</section>
+</div>
+</div>
+</section>
+<section class="feature-grid">
+<div><span>01</span><h3>Developer Profiles</h3><p>Show your skills, projects, GitHub and professional identity.</p></div>
+<div><span>02</span><h3>Project Workspaces</h3><p>Manage tasks, issues, milestones and resources in one place.</p></div>
+<div><span>03</span><h3>Team Collaboration</h3><p>Discuss work and keep every project update organized.</p></div>
+</section>
+{% endblock %}

@@ -1,0 +1,14 @@
+
+{% extends "base.html" %}
+{% block title %}Edit Profile | DevSphere{% endblock %}
+{% block content %}
+<div class="form-wrap"><form class="panel form-card" method="POST">
+<span class="eyebrow">PROFILE SETTINGS</span><h1>Edit Profile</h1>
+<label>Name</label><input name="name" value="{{user.name}}" required>
+<label>Bio</label><textarea name="bio">{{user.bio}}</textarea>
+<label>Skills</label><input name="skills" value="{{user.skills}}" placeholder="Python, Flask, JavaScript, SQL">
+<label>GitHub</label><input name="github" value="{{user.github}}" placeholder="https://github.com/username">
+<label>LinkedIn</label><input name="linkedin" value="{{user.linkedin}}" placeholder="https://linkedin.com/in/username">
+<button class="btn primary">Save Changes</button>
+</form></div>
+{% endblock %}

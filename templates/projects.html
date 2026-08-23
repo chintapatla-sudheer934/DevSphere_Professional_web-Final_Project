@@ -1,0 +1,11 @@
+
+{% extends "base.html" %}
+{% block title %}Projects | DevSphere{% endblock %}
+{% block content %}
+<div class="page-header"><div><span class="eyebrow">WORKSPACE</span><h1>Projects</h1><p>Your team's development projects.</p></div><a class="btn primary" href="{{url_for('create_project')}}">+ New Project</a></div>
+<div class="project-grid">
+{% for p in projects %}
+<a class="project-card" href="{{url_for('project',project_id=p.id)}}"><div class="card-row"><span class="tag">{{p.category}}</span><span>★ {{p.stars}}</span></div><h3>{{p.title}}</h3><p>{{p.description}}</p><div class="technology">{{p.technologies}}</div><small>Owner: {{p.owner_name}}</small><div class="progress"><i style="width:{{p.progress}}%"></i></div></a>
+{% else %}<div class="empty">No projects available.</div>{% endfor %}
+</div>
+{% endblock %}

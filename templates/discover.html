@@ -1,0 +1,17 @@
+
+{% extends "base.html" %}
+{% block title %}Discover | DevSphere{% endblock %}
+{% block content %}
+<div class="page-header"><div><span class="eyebrow">DEVELOPER COMMUNITY</span><h1>Discover Projects</h1><p>Explore what developers are building.</p></div></div>
+<form class="search-bar"><input name="q" value="{{q}}" placeholder="Search projects, technologies or categories"><button class="btn primary">Search</button></form>
+<div class="project-grid">
+{% for p in projects %}
+<div class="project-card">
+<div class="card-row"><span class="tag">{{p.category}}</span><span>★ {{p.stars}}</span></div>
+<h3>{{p.title}}</h3><p>{{p.description}}</p><div class="technology">{{p.technologies}}</div>
+<small>by <a href="{{url_for('profile',user_id=p.owner_id)}}">{{p.owner_name}}</a></small>
+<div class="card-actions"><a class="btn secondary" href="{{url_for('project',project_id=p.id)}}">Open</a><form method="POST" action="{{url_for('star',project_id=p.id)}}"><button class="btn star">★ Star</button></form></div>
+</div>
+{% else %}<div class="empty">No matching projects.</div>{% endfor %}
+</div>
+{% endblock %}

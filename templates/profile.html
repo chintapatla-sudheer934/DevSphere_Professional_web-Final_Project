@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+{% block title %}{{user.name}} | DevSphere{% endblock %}
+{% block content %}
+<section class="profile-header">
+<div class="avatar">{{user.name[:1]|upper}}</div>
+<div class="profile-main">
+<span class="eyebrow">DEVELOPER PROFILE</span>
+<h1>{{user.name}}</h1>
+<p>{{user.bio or 'Developer building useful things with code.'}}</p>
+<div class="chips">{% for s in user.skills.split(',') if s.strip() %}<span>{{s.strip()}}</span>{% endfor %}</div>
+</div>
+{% if user.id==session.user_id %}<a class="btn secondary" href="{{url_for('edit_profile')}}">Edit Profile</a>{% endif %}
+</section>
+<div class="profile-grid">
+<section><div class="section-heading"><h2>Projects</h2></div><div class="project-grid">
+{% for p in projects %}
+<a class="project-card" href="{{url_for('project',project_id=p.id)}}"><div class="card-row"><span class="tag">{{p.category}}</span><span>★ {{p.stars}}</span></div><h3>{{p.title}}</h3><p>{{p.description}}</p><div class="technology">{{p.technologies}}</div></a>
+{% else %}<div class="empty">No public projects yet.</div>{% endfor %}
+</div></section>
+<aside class="panel"><h3>Professional Links</h3>{% if user.github %}<a class="profile-link" href="{{user.github}}" target="_blank">GitHub ↗</a>{% endif %}{% if user.linkedin %}<a class="profile-link" href="{{user.linkedin}}" target="_blank">LinkedIn ↗</a>{% endif %}</aside>
+</div>
+{% endblock %}
